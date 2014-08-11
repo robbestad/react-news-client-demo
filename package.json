@@ -1,0 +1,28 @@
+{
+  "name": "React-News-Client",
+  "version": "0.0.2",
+  "description": "Get started with building React apps",
+  "repository": "https://github.com/svenanders/react-news-client",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/svenanders/react-news-client.git"
+  },
+  "dependencies": {
+    "react-touch": "0.0.2",
+    "react-router": "~0.5.2",
+    "react": "~0.11.1"
+  },
+  "devDependencies": {
+    "jsx-loader": "petehunt/jsx-loader",
+    "webpack": "~0.10.0",
+    "jquery": "~2.1.0",
+    "url-loader": "~0.5.1",
+    "css-loader": "~0.6.2",
+    "style-loader": "~0.6.0"
+  },
+  "scripts": {
+    "start": "webpack --watch --debug src/main.js build/main.js"
+  },
+  "author": "Sven A Robbestad",
+  "license": "Creative Commons"
+}
