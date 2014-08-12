@@ -567,9 +567,9 @@
 	  },
 
 	  componentDidMount: function() {
-	    //this.props.source
-
-	    $.get('http://nyhetsapiet.robbestad.no/news/utenriks', function(result) {
+	    var hash = window.location.hash.split(/(\/)/);
+	    var uricomponent=hash[hash.length-1];
+	    $.get('http://nyhetsapiet.robbestad.no/news/'+uricomponent, function(result) {
 	      var dataFromApi = $.parseJSON(result);
 	      var length=dataFromApi._embedded.news.length;
 	      if (this.isMounted()) {
@@ -645,8 +645,10 @@
 	  },
 
 	  componentDidMount: function() {
-	    //this.props.source
-	    $.get('http://nyhetsapiet.robbestad.no/news/innenriks', function(result) {
+
+	    var hash = window.location.hash.split(/(\/)/);
+	    var uricomponent=hash[hash.length-1];
+	    $.get('http://nyhetsapiet.robbestad.no/news/'+uricomponent, function(result) {
 	      var dataFromApi = $.parseJSON(result);
 	      var length=dataFromApi._embedded.news.length;
 	      if (this.isMounted()) {
@@ -678,7 +680,8 @@
 	    var content = [];
 
 	    for (var i = 0; i < this.state.title.length; i++) {
-	      content.push(React.DOM.p({key: i, className: "newsRow"}, React.DOM.b(null, this.state.title[i]), React.DOM.br(null), this.state.description[i]));
+	      content.push(React.DOM.p({key: i, className: "newsRow"}, 
+	        React.DOM.b(null, this.state.title[i]), React.DOM.br(null), this.state.description[i]));
 	     // content.push(<p key={i}> {this.state.description[i]}</p>);
 	    }
 
@@ -723,9 +726,10 @@
 	  },
 
 	  componentDidMount: function() {
-	    //this.props.source
-	    $.get('http://nyhetsapiet.robbestad.no/news/sport', function(result) {
-	      var dataFromApi = $.parseJSON(result);
+	    var hash = window.location.hash.split(/(\/)/);
+	    var uricomponent=hash[hash.length-1];
+	    $.get('http://nyhetsapiet.robbestad.no/news/'+uricomponent, function(result) {
+	     var dataFromApi = $.parseJSON(result);
 	      var length=dataFromApi._embedded.news.length;
 	      if (this.isMounted()) {
 	        titles=[];

@@ -18,8 +18,10 @@ var NewsPage = React.createClass({
   },
 
   componentDidMount: function() {
-    //this.props.source
-    $.get('http://nyhetsapiet.robbestad.no/news/innenriks', function(result) {
+
+    var hash = window.location.hash.split(/(\/)/);
+    var uricomponent=hash[hash.length-1];
+    $.get('http://nyhetsapiet.robbestad.no/news/'+uricomponent, function(result) {
       var dataFromApi = $.parseJSON(result);
       var length=dataFromApi._embedded.news.length;
       if (this.isMounted()) {
@@ -51,7 +53,8 @@ var NewsPage = React.createClass({
     var content = [];
 
     for (var i = 0; i < this.state.title.length; i++) {
-      content.push(<p key={i} className="newsRow"><b>{this.state.title[i]}</b><br/>{this.state.description[i]}</p>);
+      content.push(<p key={i} className="newsRow">
+        <b>{this.state.title[i]}</b><br/>{this.state.description[i]}</p>);
      // content.push(<p key={i}> {this.state.description[i]}</p>);
     }
 

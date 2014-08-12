@@ -19,9 +19,10 @@ var SportPage = React.createClass({
   },
 
   componentDidMount: function() {
-    //this.props.source
-    $.get('http://nyhetsapiet.robbestad.no/news/sport', function(result) {
-      var dataFromApi = $.parseJSON(result);
+    var hash = window.location.hash.split(/(\/)/);
+    var uricomponent=hash[hash.length-1];
+    $.get('http://nyhetsapiet.robbestad.no/news/'+uricomponent, function(result) {
+     var dataFromApi = $.parseJSON(result);
       var length=dataFromApi._embedded.news.length;
       if (this.isMounted()) {
         titles=[];
