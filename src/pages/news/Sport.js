@@ -5,7 +5,6 @@ var React = require('react');
 var SimpleScroller =
   require('../../components/DynamicContentScroller');
 
-  require('../../components/pad');
 
 require('../ScrollPage.css');
 
@@ -40,7 +39,7 @@ var UtenriksPage = React.createClass({
           var minutes = date.getMinutes();
 
           // will display time in 10:30:23 format
-          var formattedTime = hours.pad(hours,2,0) + ':' + minutes;
+          var formattedTime = hours + ':' + minutes;
 
           titles.push(dataFromApi._embedded.news[i].title);
           ids.push(dataFromApi._embedded.news[i].uniqueid);
