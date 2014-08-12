@@ -3,7 +3,7 @@
 var React = require('react');
 
 var SimpleScroller =
-  require('react-touch/lib/interactions/simplescroller/SimpleScroller');
+  require('../components/DynamicContentScroller');
 
 require('./ScrollPage.css');
 

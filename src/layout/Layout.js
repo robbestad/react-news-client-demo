@@ -14,7 +14,7 @@ require('./Layout.css');
 
 // Keep in sync with Layout.css
 // TODO: deprecate the CSS standard
-var SIDEBAR_WIDTH = 192;
+var SIDEBAR_WIDTH = 242;
 var TOPBAR_HEIGHT = 51; // + 1 for the border
 
 var Layout = React.createClass({
