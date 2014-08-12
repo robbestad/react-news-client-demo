@@ -20,7 +20,8 @@ var NewsPage = React.createClass({
   componentDidMount: function() {
     //this.props.source
     $.get('http://nyhetsapiet.robbestad.no/news/innenriks', function(result) {
-      var dataFromApi = result;
+      var dataFromApi = $.parseJSON(result);
+      var length=dataFromApi._embedded.news.length;
       if (this.isMounted()) {
         titles=[];
         ids=[];

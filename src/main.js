@@ -8,8 +8,8 @@ var RootPage = require('./pages/RootPage');
 ReactTouch.start(RootPage, document.getElementById('react-root'), {
   '/home': 'home',
   '/glass': 'news',
-  '/news' : 'news',
-  '/scroll': 'scroll',
-  '/viewer': 'viewer',
+  '/innenriks' : 'innenriks',
+  '/utenriks' : 'utenriks',
+  '/sport' : 'sport',
   '/': 'home'
 });

@@ -33,10 +33,10 @@ var Layout = React.createClass({
 
     var sideContent = (
       <div className="Layout-nav">
-        <RoutedLink href="/home" className="Layout-navLink" onClick={this.handleNavClick}>Home</RoutedLink>
-        <RoutedLink href="/scroll" className="Layout-navLink" onClick={this.handleNavClick}>Simple scroll</RoutedLink>
-        <RoutedLink href="/news/innenriks" className="Layout-navLink" onClick={this.handleNavClick}>Innenriks</RoutedLink>
-        <RoutedLink href="/viewer" className="Layout-lastNavLink" onClick={this.handleNavClick}>Photo gallery</RoutedLink>
+        <RoutedLink href="/home" className="Layout-navLink" onClick={this.handleNavClick}>Hjem</RoutedLink>
+        <RoutedLink href="/innenriks" className="Layout-navLink" onClick={this.handleNavClick}>Innenriks</RoutedLink>
+        <RoutedLink href="/utenriks" className="Layout-navLink" onClick={this.handleNavClick}>Utenriks</RoutedLink>
+        <RoutedLink href="/sport" className="Layout-navLink" onClick={this.handleNavClick}>Sport</RoutedLink>
       </div>
     );
 

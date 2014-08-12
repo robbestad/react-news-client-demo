@@ -16,7 +16,7 @@ var HomePage = React.createClass({
         nettleser med REACT. Ytelse burde tale for seg selv.</h3>
         <p>
 
-          Kildekoden er tilgjengelig på <a href="http://github.com/petehunt/react-touch/" target="_blank">min github-konto</a>.
+          Kildekoden er tilgjengelig på <a href="https://github.com/svenanders/react-news-client-demo" target="_blank">min github-konto</a>.
         </p>
       </div>
 
