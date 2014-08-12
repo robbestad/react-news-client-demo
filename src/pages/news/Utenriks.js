@@ -54,7 +54,7 @@ var UtenriksPage = React.createClass({
     var content = [];
 
     for (var i = 0; i < this.state.title.length; i++) {
-      var link = React.DOM.a({href: this.state.url[i], onmousedown: this.handleMouseDown}, this.state.title[i]);
+      var link = React.DOM.a({href: this.state.url[i], target: "self"}, this.state.title[i]);
       content.push(<p key={i} className="newsRow"><b>{link}</b><br/>{this.state.description[i]}</p>);
     }
 

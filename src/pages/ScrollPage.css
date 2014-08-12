@@ -13,13 +13,12 @@
   visibility: visible;
 }
 
-a{
-	  z-index: 99;
+.newsRow{
+	  z-index: 10;
+	  display: block;
+	  cursor:pointer;
 }
 
-a:active{
-	  color:green;
-}
 
 
 .resize-sensor, .resize-sensor > div {
