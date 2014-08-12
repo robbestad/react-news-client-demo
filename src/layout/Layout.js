@@ -7,8 +7,8 @@ var App = require('react-touch/lib/primitives/App');
 var RoutedLink = require('react-touch/lib/routing/RoutedLink');
 var Header = require('../components/Header');
 var LeftNavContainer = require('react-touch/lib/interactions/leftnav/LeftNavContainer');
-var Routes = require('react-router/Routes');
-var Route = require('react-router/Route');
+//var Routes = require('react-router/Routes');
+//var Route = require('react-router/Route');
 
 require('./Layout.css');
 

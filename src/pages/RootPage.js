@@ -23,8 +23,10 @@ var RootPage = React.createClass({
   },
 
   handleClick: function() {
-    this.setState({force: true});
+
+    this.setState({force: false});
   },
+  
 
   render: function() {
     // if (!IS_IPHONE_5 && !this.state.force) {

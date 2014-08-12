@@ -53,16 +53,12 @@ var UtenriksPage = React.createClass({
       content.push(<p key={i} className="newsRow"><b>{link}</b><br/>{this.state.description[i]}</p>);
     }
 
-
     return (
      <SimpleScroller className="ScrollPage" options={{scrollingX: false}}>
         <div className="ScrollPage-content">{content}</div>
       </SimpleScroller>
     );
-      
   }
-
-
 });
 
 module.exports = UtenriksPage;

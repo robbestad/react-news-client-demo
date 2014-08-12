@@ -6,6 +6,19 @@
 
 .ScrollPage-content {
   padding: 15px;
+	width: 100%;
+	height: 100%;
+	overflow: visible;
+	z-index: -1;
+  visibility: visible;
+}
+
+a{
+	  z-index: 99;
+}
+
+a:active{
+	  color:green;
 }
 
 

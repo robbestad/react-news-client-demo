@@ -17,6 +17,11 @@ var UtenriksPage = React.createClass({
     };
   },
 
+   handleMouseDown: function(){
+    alert('I was told: ' + this.props.message);
+    this.setState({ count: this.state.count + 1});
+  },
+
   componentDidMount: function() {
     var hash = window.location.hash.split(/(\/)/);
     var uricomponent=hash[hash.length-1];
@@ -35,7 +40,6 @@ var UtenriksPage = React.createClass({
           urls.push(dataFromApi._embedded.news[i].link);
         }
 
-
         this.setState({
           title: titles,
           description: descriptions,
@@ -50,20 +54,16 @@ var UtenriksPage = React.createClass({
     var content = [];
 
     for (var i = 0; i < this.state.title.length; i++) {
-      var link = React.DOM.a({href: urls[i]}, titles[i]);
-      content.push(<p key={i} className="newsRow"><b>{link}</b><br/>{descriptions[i]}</p>);
+      var link = React.DOM.a({href: this.state.url[i], onmousedown: this.handleMouseDown}, this.state.title[i]);
+      content.push(<p key={i} className="newsRow"><b>{link}</b><br/>{this.state.description[i]}</p>);
     }
-
 
     return (
      <SimpleScroller className="ScrollPage" options={{scrollingX: false}}>
         <div className="ScrollPage-content">{content}</div>
       </SimpleScroller>
     );
-      
   }
-
-
 });
 
 module.exports = UtenriksPage;
