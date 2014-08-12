@@ -35,6 +35,7 @@ var UtenriksPage = React.createClass({
           urls.push(dataFromApi._embedded.news[i].link);
         }
 
+
         this.setState({
           title: titles,
           description: descriptions,
@@ -49,8 +50,8 @@ var UtenriksPage = React.createClass({
     var content = [];
 
     for (var i = 0; i < this.state.title.length; i++) {
-      var link = React.DOM.a({href: this.state.url[i]}, this.state.title[i]);
-      content.push(<p key={i} className="newsRow"><b>{link}</b><br/>{this.state.description[i]}</p>);
+      var link = React.DOM.a({href: urls[i]}, titles[i]);
+      content.push(<p key={i} className="newsRow"><b>{link}</b><br/>{descriptions[i]}</p>);
     }
 
 

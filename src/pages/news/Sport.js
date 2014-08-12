@@ -39,7 +39,7 @@ var UtenriksPage = React.createClass({
           var minutes = date.getMinutes();
 
           // will display time in 10:30:23 format
-          var formattedTime = hours + ':' + minutes;
+          var formattedTime =hours + ':' + minutes;
 
           titles.push(dataFromApi._embedded.news[i].title);
           ids.push(dataFromApi._embedded.news[i].uniqueid);
