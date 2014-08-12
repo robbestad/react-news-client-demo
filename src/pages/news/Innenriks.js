@@ -7,18 +7,17 @@ var SimpleScroller =
 
 require('../ScrollPage.css');
 
-var NewsPage = React.createClass({
+var UtenriksPage = React.createClass({
   getInitialState: function() {
     return {
       title: [''],
       description: [''],
       id: [''],
-      data: []
+      url: []
     };
   },
 
   componentDidMount: function() {
-
     var hash = window.location.hash.split(/(\/)/);
     var uricomponent=hash[hash.length-1];
     $.get('http://nyhetsapiet.robbestad.no/news/'+uricomponent, function(result) {
@@ -28,22 +27,19 @@ var NewsPage = React.createClass({
         titles=[];
         ids=[];
         descriptions=[];
-        data=[];
-        content=[];
+        urls=[];
         for(i=0;i<dataFromApi._embedded.news.length;i++){
           titles.push(dataFromApi._embedded.news[i].title);
           ids.push(dataFromApi._embedded.news[i].uniqueid);
           descriptions.push(dataFromApi._embedded.news[i].description);
-          data.push([dataFromApi._embedded.news[i].title,dataFromApi._embedded.news[i].description]);
-          content.push('<p key='+dataFromApi._embedded.news[i].id+'>'+dataFromApi._embedded.news[i].title+'</p>');
+          urls.push(dataFromApi._embedded.news[i].link);
         }
 
         this.setState({
           title: titles,
           description: descriptions,
-          data: data,
           id: ids,
-          content: content
+          url: urls,
         });
       }
     }.bind(this));
@@ -53,9 +49,8 @@ var NewsPage = React.createClass({
     var content = [];
 
     for (var i = 0; i < this.state.title.length; i++) {
-      content.push(<p key={i} className="newsRow">
-        <b>{this.state.title[i]}</b><br/>{this.state.description[i]}</p>);
-     // content.push(<p key={i}> {this.state.description[i]}</p>);
+      var link = React.DOM.a({href: this.state.url[i]}, this.state.title[i]);
+      content.push(<p key={i} className="newsRow"><b>{link}</b><br/>{this.state.description[i]}</p>);
     }
 
 
@@ -70,5 +65,5 @@ var NewsPage = React.createClass({
 
 });
 
-module.exports = NewsPage;
+module.exports = UtenriksPage;
 
