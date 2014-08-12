@@ -11,13 +11,15 @@ var HomePage = React.createClass({
   render: function() {
     return (
       <div>
-        <h2>Nyheter i dag</h2>
+        <h2>Demo</h2>
         <h3>Dette er et lite demoprosjekt som viser hvordan du kan presentere et sett med API-data på en mobil
-        nettleser med REACT. Ytelse burde tale for seg selv.</h3>
-        <p>
+        nettleser med ytelse på nivå med native.</h3>
+        <!--
+          <p>
 
           Kildekoden er tilgjengelig på <a href="https://github.com/svenanders/react-news-client-demo" target="_blank">min github-konto</a>.
         </p>
+        -->
       </div>
 
 
