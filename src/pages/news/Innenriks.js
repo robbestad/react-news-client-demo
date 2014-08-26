@@ -7,6 +7,7 @@ var SimpleScroller =
 
 require('../ScrollPage.css');
 
+
 var UtenriksPage = React.createClass({
   getInitialState: function() {
     return {
